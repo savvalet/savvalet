@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARRIVE — Premier Valet Services, Los Angeles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Neue+Haas+Grotesk+Display+Pro:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a08;
+    --off-white: #f4f0e8;
+    --cream: #ede8db;
+    --gold: #c9a84c;
+    --gold-light: #e8c96e;
+    --warm-gray: #8a8278;
+    --charcoal: #1e1c18;
+    --section-pad: 120px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: auto; }
+
+  body {
+    background: var(--black);
+    color: var(--off-white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 60px;
+    mix-blend-mode: normal;
+  }
+  nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,10,8,0.9) 0%, transparent 100%);
+    pointer-events: none;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+  }
+  .nav-logo span { font-style: italic; font-weight: 300; color: var(--off-white); }
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    position: relative;
+    z-index: 1;
+  }
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* SECTIONS */
+  section {
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* ===== PAGE 1: HOME ===== */
+  #home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+
+  .home-left {
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 70px 80px 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  .home-left::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .home-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .home-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px; height: 1px;
+    background: var(--gold);
+  }
+
+  .home-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 5.5vw, 82px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--off-white);
+    margin-bottom: 36px;
+  }
+  .home-headline em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .home-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--warm-gray);
+    max-width: 420px;
+    margin-bottom: 50px;
+  }
+
+  .home-since {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 50px;
+  }
+  .home-since-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1;
+  }
+  .home-since-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  .home-stats {
+    display: flex;
+    gap: 50px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--gold);
+    display: block;
+  }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-top: 4px;
+  }
+
+  /* HOME RIGHT — Contact */
+  .home-right {
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 70px 80px 70px;
+    position: relative;
+  }
+  .home-right::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+    opacity: 0.4;
+  }
+
+  .contact-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .contact-label::before {
+    content: '';
+    display: block;
+    width: 40px; height: 1px;
+    background: var(--gold);
+  }
+
+  .contact-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 46px;
+    font-weight: 300;
+    color: var(--black);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .contact-title em { font-style: italic; }
+
+  .contact-sub {
+    font-size: 13px;
+    color: #6b6660;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 18px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .form-field label {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8a8278;
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: rgba(10,10,8,0.05);
+    border: 1px solid rgba(10,10,8,0.15);
+    border-radius: 0;
+    padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--black);
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-field textarea { resize: vertical; min-height: 90px; }
+
+  .btn-submit {
+    margin-top: 8px;
+    background: var(--black);
+    color: var(--gold);
+    border: none;
+    padding: 18px 48px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-submit::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.77,0,0.175,1);
+  }
+  .btn-submit:hover::before { transform: scaleX(1); }
+  .btn-submit:hover { color: var(--black); }
+  .btn-submit span { position: relative; z-index: 1; }
+
+  .contact-direct {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(10,10,8,0.1);
+    display: flex;
+    gap: 40px;
+  }
+  .direct-item { display: flex; flex-direction: column; gap: 5px; }
+  .direct-item-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #9a9590;
+  }
+  .direct-item-val {
+    font-size: 13px;
+    color: var(--black);
+  }
+  .direct-item-val a {
+    color: var(--black);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .direct-item-val a:hover { color: var(--gold); }
+
+  /* ===== PAGE 2: WHAT WE OFFER ===== */
+  #offer {
+    background: var(--charcoal);
+    padding: var(--section-pad) 0;
+    min-height: 100vh;
+  }
+
+  .section-header {
+    padding: 0 70px;
+    margin-bottom: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .section-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px; height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 4.5vw, 68px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--off-white);
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-desc {
+    max-width: 320px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--warm-gray);
+    padding-bottom: 8px;
+  }
+
+  /* Offer grid */
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .offer-card {
+    padding: 56px 54px;
+    border-right: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s;
+  }
+  .offer-card:nth-child(3n) { border-right: none; }
+  .offer-card:hover { background: rgba(201,168,76,0.04); }
+
+  .offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--gold);
+    transition: width 0.5s cubic-bezier(0.77,0,0.175,1);
+  }
+  .offer-card:hover::before { width: 100%; }
+
+  .offer-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--gold);
+    opacity: 0.6;
+    letter-spacing: 0.1em;
+    margin-bottom: 28px;
+  }
+
+  .offer-icon {
+    font-size: 32px;
+    margin-bottom: 22px;
+    display: block;
+  }
+
+  .offer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--off-white);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .offer-text {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--warm-gray);
+  }
+
+  /* ===== PAGE 3: WHO WE SERVE ===== */
+  #serve {
+    background: var(--black);
+    padding: var(--section-pad) 0;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Flowing ticker rows */
+  .ticker-wrapper {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ticker-row {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+  .ticker-track {
+    display: flex;
+    gap: 0;
+    animation: ticker-scroll 32s linear infinite;
+  }
+  .ticker-row:nth-child(even) .ticker-track {
+    animation-direction: reverse;
+    animation-duration: 38s;
+  }
+
+  @keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .venue-tile {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 44px 56px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    min-width: 280px;
+    transition: background 0.35s;
+    cursor: default;
+  }
+  .venue-tile:hover {
+    background: rgba(201,168,76,0.06);
+  }
+  .venue-tile:hover .venue-name { color: var(--gold); }
+
+  .venue-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--off-white);
+    margin-bottom: 6px;
+    transition: color 0.3s;
+    white-space: nowrap;
+  }
+  .venue-location {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+  .venue-tag {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  .serve-bottom {
+    padding: 80px 70px 0;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: 70px;
+  }
+  .serve-region {
+    flex: 1;
+  }
+  .region-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 300;
+    color: var(--off-white);
+    margin-bottom: 10px;
+  }
+  .region-name em { font-style: italic; color: var(--gold); }
+  .region-desc {
+    font-size: 13px;
+    color: var(--warm-gray);
+    line-height: 1.8;
+    max-width: 300px;
+  }
+
+  /* ===== PAGE 4: EVENTS ===== */
+  #events {
+    background: var(--off-white);
+    min-height: 100vh;
+    padding: var(--section-pad) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  #events::before {
+    content: 'ARRIVE';
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28vw;
+    font-weight: 600;
+    color: rgba(10,10,8,0.03);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: -0.02em;
+  }
+
+  #events .section-title { color: var(--black); }
+  #events .section-eyebrow { color: var(--gold); }
+  #events .section-desc { color: #6b6660; }
+
+  .events-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 2px;
+    padding: 0 70px;
+    margin-top: 70px;
+  }
+
+  .event-card {
+    background: var(--black);
+    padding: 56px 48px;
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .event-card:hover { transform: translateY(-6px); }
+
+  .event-card.featured {
+    background: var(--charcoal);
+    grid-row: span 1;
+  }
+
+  .event-card-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .event-card:hover .event-card-bg { opacity: 1; }
+
+  .event-card-bg-1 {
+    background: radial-gradient(ellipse at bottom left, rgba(201,168,76,0.15) 0%, transparent 70%);
+  }
+  .event-card-bg-2 {
+    background: radial-gradient(ellipse at top right, rgba(201,168,76,0.1) 0%, transparent 70%);
+  }
+  .event-card-bg-3 {
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 70%);
+  }
+
+  .event-num {
+    position: absolute;
+    top: 40px; right: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+  }
+
+  .event-icon { font-size: 36px; margin-bottom: 28px; }
+
+  .event-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--off-white);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .event-title em { font-style: italic; color: var(--gold-light); }
+
+  .event-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--warm-gray);
+    margin-bottom: 32px;
+  }
+
+  .event-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .event-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: rgba(244,240,232,0.6);
+    letter-spacing: 0.05em;
+  }
+  .event-feature::before {
+    content: '';
+    display: block;
+    width: 18px; height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .event-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    transition: gap 0.3s;
+    cursor: none;
+  }
+  .event-cta:hover { gap: 20px; }
+  .event-cta-arrow {
+    width: 28px; height: 1px;
+    background: var(--gold);
+    position: relative;
+    transition: width 0.3s;
+  }
+  .event-cta:hover .event-cta-arrow { width: 40px; }
+  .event-cta-arrow::after {
+    content: '';
+    position: absolute;
+    right: 0; top: -3px;
+    width: 7px; height: 7px;
+    border-top: 1px solid var(--gold);
+    border-right: 1px solid var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .events-bottom {
+    padding: 70px 70px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .contract-callout {
+    background: var(--black);
+    padding: 50px 54px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contract-callout::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(to right, var(--gold), transparent);
+  }
+  .contract-callout-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--off-white);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .contract-callout-title em { font-style: italic; color: var(--gold); }
+  .contract-callout-text {
+    font-size: 13px;
+    color: var(--warm-gray);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+  .contract-perks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .contract-perk {
+    font-size: 11px;
+    color: rgba(244,240,232,0.5);
+    letter-spacing: 0.08em;
+    padding-left: 14px;
+    border-left: 2px solid var(--gold);
+  }
+
+  .pricing-options { display: flex; flex-direction: column; gap: 20px; }
+  .pricing-option {
+    padding: 28px 32px;
+    border: 1px solid rgba(10,10,8,0.12);
+    background: rgba(255,255,255,0.6);
+    position: relative;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .pricing-option.featured-plan {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.04);
+  }
+  .pricing-option.featured-plan::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -10px; left: 24px;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+  }
+  .pricing-option:hover { border-color: var(--gold); }
+  .plan-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--black);
+    margin-bottom: 6px;
+  }
+  .plan-desc {
+    font-size: 11px;
+    color: #8a8278;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 60px 70px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+  }
+  .footer-copy {
+    font-size: 11px;
+    color: var(--warm-gray);
+    letter-spacing: 0.08em;
+  }
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .footer-links a {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* Divider line with city */
+  .city-divider {
+    padding: 0 70px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 70px;
+  }
+  .city-divider::before,
+  .city-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+  #events .city-divider::before,
+  #events .city-divider::after {
+    background: rgba(10,10,8,0.1);
+  }
+  .city-text {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    white-space: nowrap;
+  }
+  #events .city-text { color: #9a9590; }
+
+  /* Scroll indicator */
+  .scroll-hint {
+    position: absolute;
+    bottom: 40px; left: 70px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+  .scroll-hint-line {
+    width: 50px; height: 1px;
+    background: var(--warm-gray);
+    position: relative;
+    overflow: hidden;
+  }
+  .scroll-hint-line::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: var(--gold);
+    animation: scanline 2s linear infinite;
+  }
+  @keyframes scanline {
+    to { left: 100%; }
+  }
+
+  /* Animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">ARRIVE<span> valet</span></a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#offer">Services</a></li>
+    <li><a href="#serve">Partners</a></li>
+    <li><a href="#events">Events</a></li>
+  </ul>
+</nav>
+
+<!-- ===== PAGE 1: HOME ===== -->
+<section id="home">
+
+  <!-- LEFT -->
+  <div class="home-left">
+    <div class="home-eyebrow fade-up">Los Angeles Valet Services</div>
+
+    <h1 class="home-headline fade-up">
+      First impressions<br>begin <em>before</em><br>the door.
+    </h1>
+
+    <p class="home-desc fade-up">
+      ARRIVE is LA's premier white-glove valet service, built exclusively for restaurants and bars that demand excellence at every touchpoint. We park the car. We set the tone.
+    </p>
+
+    <div class="home-since fade-up">
+      <span class="home-since-year">20XX</span>
+      <span class="home-since-label">Operating Since</span>
+    </div>
+
+    <div class="home-stats fade-up">
+      <div>
+        <span class="stat-num">30+</span>
+        <span class="stat-label">Venues Served</span>
+      </div>
+      <div>
+        <span class="stat-num">5K+</span>
+        <span class="stat-label">Cars Monthly</span>
+      </div>
+      <div>
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Insured</span>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span class="scroll-hint-line"></span>
+      Scroll to explore
+    </div>
+  </div>
+
+  <!-- RIGHT: Contact -->
+  <div class="home-right">
+    <div class="contact-label">Get in Touch</div>
+    <h2 class="contact-title">Let's <em>partner</em><br>with your venue</h2>
+    <p class="contact-sub">Whether you're a new opening or an established name, we'd love to discuss how ARRIVE can elevate your guest experience.</p>
+
+    <form class="contact-form" onsubmit="return false;">
+      <div class="form-row">
+        <div class="form-field">
+          <label>Your Name</label>
+          <input type="text" placeholder="Jane Smith">
+        </div>
+        <div class="form-field">
+          <label>Venue Name</label>
+          <input type="text" placeholder="The Ivy, Catch LA...">
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Email Address</label>
+        <input type="email" placeholder="jane@yourvenue.com">
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Phone</label>
+          <input type="tel" placeholder="(310) 000-0000">
+        </div>
+        <div class="form-field">
+          <label>Venue Type</label>
+          <select>
+            <option value="">Select...</option>
+            <option>Fine Dining</option>
+            <option>Casual Restaurant</option>
+            <option>Bar / Lounge</option>
+            <option>Event Venue</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Venue Address</label>
+        <input type="text" placeholder="123 Sunset Blvd, West Hollywood, CA">
+      </div>
+      <div class="form-field">
+        <label>Message</label>
+        <textarea placeholder="Tell us about your venue, expected volume, and what you're looking for..."></textarea>
+      </div>
+      <button class="btn-submit"><span>Send Inquiry →</span></button>
+    </form>
+
+    <div class="contact-direct">
+      <div class="direct-item">
+        <span class="direct-item-label">Phone</span>
+        <span class="direct-item-val"><a href="tel:3100000000">(XXX) XXX-XXXX</a></span>
+      </div>
+      <div class="direct-item">
+        <span class="direct-item-label">Email</span>
+        <span class="direct-item-val"><a href="mailto:info@savvalet.com">info@savvalet.com</a></span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ===== PAGE 2: WHAT WE OFFER ===== -->
+<section id="offer">
+  <div class="section-header fade-up">
+    <div>
+      <div class="section-eyebrow">Our Services</div>
+      <h2 class="section-title">Built for <em>the best</em><br>venues in the city</h2>
+    </div>
+    <p class="section-desc">Every service we offer is designed to make your restaurant run smoother, look sharper, and give your guests a reason to remember the night.</p>
+  </div>
+
+  <div class="city-divider">
+    <span class="city-text">West Hollywood · Hollywood · Los Angeles</span>
+  </div>
+
+  <div class="offer-grid">
+
+    <div class="offer-card fade-up">
+      <div class="offer-num">01</div>
+      <span class="offer-icon">🏛</span>
+      <div class="offer-name">Branded Podiums &amp; Uniforms</div>
+      <p class="offer-text">Custom podiums laser-engraved with your venue's logo. Our attendants wear tailored uniforms that match your brand's palette — a seamless extension of your identity from curb to table.</p>
+    </div>
+
+    <div class="offer-card fade-up">
+      <div class="offer-num">02</div>
+      <span class="offer-icon">👔</span>
+      <div class="offer-name">Valet Merchandise</div>
+      <p class="offer-text">Co-branded collateral including ticket sleeves, bag tags, key fobs, and packaging. Small details that signal to your guests that this is a considered, premium operation.</p>
+    </div>
+
+    <div class="offer-card fade-up">
+      <div class="offer-num">03</div>
+      <span class="offer-icon">⚡</span>
+      <div class="offer-name">Tech-Forward Operations</div>
+      <p class="offer-text">Digital ticketing, SMS vehicle retrieval, contactless payments, and real-time vehicle tracking. Guests text to request their car — no waiting, no shouting, no friction.</p>
+    </div>
+
+    <div class="offer-card fade-up">
+      <div class="offer-num">04</div>
+      <span class="offer-icon">📊</span>
+      <div class="offer-name">Analytics &amp; Insights</div>
+      <p class="offer-text">Monthly reports on peak arrival times, average dwell times, and cover estimates shared directly with your FOH team. Data that helps you staff smarter and seat faster.</p>
+    </div>
+
+    <div class="offer-card fade-up">
+      <div class="offer-num">05</div>
+      <span class="offer-icon">🛡</span>
+      <div class="offer-name">Fully Licensed &amp; Insured</div>
+      <p class="offer-text">All ARRIVE attendants are background-checked, licensed, and covered under our comprehensive commercial auto and general liability policy. Zero liability on your side.</p>
+    </div>
+
+    <div class="offer-card fade-up">
+      <div class="offer-num">06</div>
+      <span class="offer-icon">🎯</span>
+      <div class="offer-name">Dedicated Account Management</div>
+      <p class="offer-text">A single point of contact who knows your venue, your team, and your standards. Available 7 days a week. Not a call center — a person who picks up.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== PAGE 3: WHO WE SERVE ===== -->
+<section id="serve">
+  <div class="section-header fade-up" style="padding-top: 0;">
+    <div>
+      <div class="section-eyebrow">Our Partners</div>
+      <h2 class="section-title">The venues that<br>trust <em>ARRIVE</em></h2>
+    </div>
+    <p class="section-desc">From intimate supper clubs to buzzing rooftop bars, we serve the venues that define the LA dining scene.</p>
+  </div>
+
+  <!-- Flowing venue tiles -->
+  <div class="ticker-wrapper">
+
+    <!-- Row 1 -->
+    <div class="ticker-row">
+      <div class="ticker-track">
+        <!-- First set -->
+        <div class="venue-tile"><div class="venue-name">Cecconi's</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Fine Dining</span></div>
+        <div class="venue-tile"><div class="venue-name">Delilah</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Bar &amp; Supper Club</span></div>
+        <div class="venue-tile"><div class="venue-name">Craig's</div><div class="venue-location">West Hollywood</div><span class="venue-tag">American Restaurant</span></div>
+        <div class="venue-tile"><div class="venue-name">Employees Only</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Cocktail Bar</span></div>
+        <div class="venue-tile"><div class="venue-name">Pump Restaurant</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Mediterranean</span></div>
+        <div class="venue-tile"><div class="venue-name">Palihouse</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Hotel Bar</span></div>
+        <!-- Duplicate for infinite loop -->
+        <div class="venue-tile"><div class="venue-name">Cecconi's</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Fine Dining</span></div>
+        <div class="venue-tile"><div class="venue-name">Delilah</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Bar &amp; Supper Club</span></div>
+        <div class="venue-tile"><div class="venue-name">Craig's</div><div class="venue-location">West Hollywood</div><span class="venue-tag">American Restaurant</span></div>
+        <div class="venue-tile"><div class="venue-name">Employees Only</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Cocktail Bar</span></div>
+        <div class="venue-tile"><div class="venue-name">Pump Restaurant</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Mediterranean</span></div>
+        <div class="venue-tile"><div class="venue-name">Palihouse</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Hotel Bar</span></div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="ticker-row">
+      <div class="ticker-track">
+        <div class="venue-tile"><div class="venue-name">Catch LA</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Seafood &amp; Rooftop</span></div>
+        <div class="venue-tile"><div class="venue-name">Katana</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Japanese</span></div>
+        <div class="venue-tile"><div class="venue-name">Harriet's</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Rooftop Bar</span></div>
+        <div class="venue-tile"><div class="venue-name">1 Hotel Bar</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Hotel Lounge</span></div>
+        <div class="venue-tile"><div class="venue-name">Horses</div><div class="venue-location">Hollywood</div><span class="venue-tag">California Cuisine</span></div>
+        <div class="venue-tile"><div class="venue-name">The Nice Guy</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Italian &amp; Bar</span></div>
+        <!-- Duplicate -->
+        <div class="venue-tile"><div class="venue-name">Catch LA</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Seafood &amp; Rooftop</span></div>
+        <div class="venue-tile"><div class="venue-name">Katana</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Japanese</span></div>
+        <div class="venue-tile"><div class="venue-name">Harriet's</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Rooftop Bar</span></div>
+        <div class="venue-tile"><div class="venue-name">1 Hotel Bar</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Hotel Lounge</span></div>
+        <div class="venue-tile"><div class="venue-name">Horses</div><div class="venue-location">Hollywood</div><span class="venue-tag">California Cuisine</span></div>
+        <div class="venue-tile"><div class="venue-name">The Nice Guy</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Italian &amp; Bar</span></div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="ticker-row">
+      <div class="ticker-track">
+        <div class="venue-tile"><div class="venue-name">Spartina</div><div class="venue-location">Hollywood</div><span class="venue-tag">Mediterranean</span></div>
+        <div class="venue-tile"><div class="venue-name">Bar Lis</div><div class="venue-location">Hollywood</div><span class="venue-tag">French Riviera Bar</span></div>
+        <div class="venue-tile"><div class="venue-name">Laurel Hardware</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Bar &amp; Kitchen</span></div>
+        <div class="venue-tile"><div class="venue-name">Grandmaster Recorders</div><div class="venue-location">Hollywood</div><span class="venue-tag">Restaurant &amp; Club</span></div>
+        <div class="venue-tile"><div class="venue-name">AOC</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Wine Bar</span></div>
+        <div class="venue-tile"><div class="venue-name">Playa</div><div class="venue-location">Hollywood</div><span class="venue-tag">Latin Fusion</span></div>
+        <!-- Duplicate -->
+        <div class="venue-tile"><div class="venue-name">Spartina</div><div class="venue-location">Hollywood</div><span class="venue-tag">Mediterranean</span></div>
+        <div class="venue-tile"><div class="venue-name">Bar Lis</div><div class="venue-location">Hollywood</div><span class="venue-tag">French Riviera Bar</span></div>
+        <div class="venue-tile"><div class="venue-name">Laurel Hardware</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Bar &amp; Kitchen</span></div>
+        <div class="venue-tile"><div class="venue-name">Grandmaster Recorders</div><div class="venue-location">Hollywood</div><span class="venue-tag">Restaurant &amp; Club</span></div>
+        <div class="venue-tile"><div class="venue-name">AOC</div><div class="venue-location">West Hollywood</div><span class="venue-tag">Wine Bar</span></div>
+        <div class="venue-tile"><div class="venue-name">Playa</div><div class="venue-location">Hollywood</div><span class="venue-tag">Latin Fusion</span></div>
+      </div>
+    </div>
+
+  </div><!-- end ticker -->
+
+  <div class="serve-bottom fade-up">
+    <div class="serve-region">
+      <div class="region-name"><em>West</em> Hollywood</div>
+      <p class="region-desc">The Sunset Strip, Santa Monica Boulevard, and the Design District. We know every loading zone, red line, and red-carpet arrival protocol in the 1.9 square miles that matter most.</p>
+    </div>
+    <div class="serve-region">
+      <div class="region-name"><em>Holly</em>wood</div>
+      <p class="region-desc">From Highland to Cahuenga, Hollywood Boulevard to Franklin. Fast-moving neighborhoods with heavy evening foot traffic — our team navigates it flawlessly, every night.</p>
+    </div>
+    <div class="serve-region">
+      <div class="region-name"><em>Expanding</em> Soon</div>
+      <p class="region-desc">Silver Lake, Los Feliz, and Beverly Hills are next. If your venue is outside our current territory, reach out — we may already be planning coverage in your area.</p>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ===== PAGE 4: PRIVATE EVENTS ===== -->
+<section id="events">
+  <div class="section-header fade-up" style="padding: 0 70px; margin-bottom: 60px;">
+    <div>
+      <div class="section-eyebrow" style="color: var(--gold);">Private &amp; Contracted</div>
+      <h2 class="section-title" style="color: var(--black);">Beyond the<br>nightly <em>service</em></h2>
+    </div>
+    <p class="section-desc" style="color: #6b6660;">Buyouts, brand activations, film premieres, fashion weeks — and the venues that want more than a one-night deal.</p>
+  </div>
+
+  <div class="city-divider">
+    <span class="city-text">Private Events · Annual Contracts · Custom Packages</span>
+  </div>
+
+  <div class="events-grid">
+
+    <div class="event-card featured">
+      <div class="event-card-bg event-card-bg-1"></div>
+      <div class="event-num">I</div>
+      <div class="event-icon">🎭</div>
+      <div class="event-title">Private <em>Events</em></div>
+      <p class="event-desc">Film premieres, celebrity birthdays, brand launches, and gallery openings. We specialize in high-profile, high-volume nights where every car is a statement and every arrival is a moment.</p>
+      <div class="event-features">
+        <div class="event-feature">Dedicated event coordinator</div>
+        <div class="event-feature">Custom attendant count</div>
+        <div class="event-feature">Red-carpet arrival sequencing</div>
+        <div class="event-feature">Celebrity &amp; VIP protocols</div>
+        <div class="event-feature">Same-day booking available</div>
+      </div>
+      <a href="#home" class="event-cta">Inquire now <span class="event-cta-arrow"></span></a>
+    </div>
+
+    <div class="event-card">
+      <div class="event-card-bg event-card-bg-2"></div>
+      <div class="event-num">II</div>
+      <div class="event-icon">📋</div>
+      <div class="event-title"><em>Custom</em> Pricing</div>
+      <p class="event-desc">No two venues are the same. We build pricing around your real numbers — nights per week, estimated covers, parking density, and attendant count needed.</p>
+      <div class="event-features">
+        <div class="event-feature">Per-night or per-car models</div>
+        <div class="event-feature">Guest-pays or venue-pays options</div>
+        <div class="event-feature">Seasonal adjustments</div>
+        <div class="event-feature">No hidden fees, ever</div>
+      </div>
+      <a href="#home" class="event-cta">Get a quote <span class="event-cta-arrow"></span></a>
+    </div>
+
+    <div class="event-card">
+      <div class="event-card-bg event-card-bg-3"></div>
+      <div class="event-num">III</div>
+      <div class="event-icon">🤝</div>
+      <div class="event-title">Annual <em>Contracts</em></div>
+      <p class="event-desc">For venues that want consistency, preferential pricing, and a team that knows their operation inside out. Annual partners receive priority scheduling year-round.</p>
+      <div class="event-features">
+        <div class="event-feature">Locked-in rates for 12 months</div>
+        <div class="event-feature">Priority holiday coverage</div>
+        <div class="event-feature">Monthly analytics reports</div>
+        <div class="event-feature">Branded podium included</div>
+      </div>
+      <a href="#home" class="event-cta">Learn more <span class="event-cta-arrow"></span></a>
+    </div>
+
+  </div>
+
+  <div class="events-bottom fade-up">
+
+    <div class="contract-callout">
+      <h3 class="contract-callout-title">Annual <em>Partners</em> get more<br>than just a valet.</h3>
+      <p class="contract-callout-text">Sign a 12-month contract and ARRIVE becomes an extension of your team — not a vendor. We show up early, stay late, and invest in your venue's reputation the same way you do.</p>
+      <div class="contract-perks">
+        <div class="contract-perk">Locked pricing all year</div>
+        <div class="contract-perk">Free podium &amp; merch setup</div>
+        <div class="contract-perk">Monthly data reports</div>
+        <div class="contract-perk">Holiday priority booking</div>
+        <div class="contract-perk">Dedicated account rep</div>
+        <div class="contract-perk">Co-branded collateral</div>
+      </div>
+      <a href="#home" class="event-cta" style="color: var(--gold);">Start the conversation <span class="event-cta-arrow"></span></a>
+    </div>
+
+    <div class="pricing-options">
+      <div style="margin-bottom: 8px;">
+        <div class="section-eyebrow" style="font-size: 9px; margin-bottom: 10px;">Pricing</div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--black); font-weight: 300; line-height: 1.1; margin-bottom: 20px;">Every quote is<br><em>built for you</em></div>
+      </div>
+      <div class="pricing-option featured-plan">
+        <div class="plan-name">Custom Quote</div>
+        <div class="plan-desc">No fixed packages — we build pricing around your venue's real numbers. Nights per week, expected covers, location, and staffing needs all factor in. Reach out and we'll put together a proposal within 24 hours.</div>
+      </div>
+      <div style="margin-top: 24px;">
+        <a href="#home" class="event-cta" style="color: var(--gold);">Request a quote <span class="event-cta-arrow"></span></a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ARRIVE</div>
+  <span class="footer-copy">© 2024 ARRIVE Valet Services · Los Angeles, CA</span>
+  <ul class="footer-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#offer">Services</a></li>
+    <li><a href="#serve">Partners</a></li>
+    <li><a href="#events">Events</a></li>
+  </ul>
+</footer>
+
+<script>
+  // Fade-up on scroll
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Pause ticker on hover
+  document.querySelectorAll('.ticker-row').forEach(row => {
+    row.addEventListener('mouseenter', () => {
+      row.querySelectorAll('.ticker-track').forEach(t => t.style.animationPlayState = 'paused');
+    });
+    row.addEventListener('mouseleave', () => {
+      row.querySelectorAll('.ticker-track').forEach(t => t.style.animationPlayState = 'running');
+    });
+  });
+</script>
+
+</body>
+</html>
